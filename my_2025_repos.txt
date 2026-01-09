@@ -1,0 +1,86 @@
+MLFS                                | My Book [Machine Learning From Scratch]
+seo                                 | seo keywords
+AutoGitter                          | Salvaged project: AutoGitter
+DivineFinder                        | Salvaged project: DivineFinder
+mg                                  | worlds fastest language corrector using rust
+Time_Bomb                           | The unhinged timer app
+NGO_Manager                         | For NGOs
+JoJo                                | Indian Job Market Analysis
+readball                            | read a football match 
+CNWGOL                              | Conways Game Of Life
+Noter                               | Noter: Making Notes Re-thought
+Story                               | My Most Worked On AI Yet
+rust_grammar                        | rust_grammar
+A2A_Experiments                     | just 2 ai talking 
+type                                | ascii 
+Earth                               | earth innit
+Wensday                             | My own AI
+sootplane                           | sotthing the mind
+SalvagedWeb                         | Salvaged project: SalvagedWeb
+agent_test                          | yes 
+veditor                             | AI goes brrr edits video and splits it out
+PrompterToolkit                     | Salvaged project: PrompterToolkit
+morphic-ai-answer-engine-generative-ui | 
+Resuwrite                           | resume -> novel
+yapnotes                            | Yap Your Notes
+Moon_Phase                          | Something my girlfriend chose over me 
+UniversalComponents                 | Salvaged project: UniversalComponents
+PythonRSB                           | Salvaged project: PythonRSB
+Pharma-Mart                         | 
+WebGraphics                         | Salvaged project: WebGraphics
+infiwrite                           | write infinitely THATS ALL
+konflict                            | war is bad
+Pokemon_Adventures                  | my pokemon endeavours
+Invest                              | 
+anyoouhl                            | Web+doc RAG with retrieval
+AI_Detector                         | Test Test Test
+Wirerio                             | From Sketch to Site
+High_Life                           | highnotes app
+AsciiCam                            | Turns your camera input into ascii
+calc                                | 
+lucida                              | see your ideas
+sad                                 | sad llm
+Susu                                | sudoku
+yjs_lexi                            | bbb
+blahblah                            | 
+JS_Interview                        | hello 
+how_we_act                          | something
+UC                                  | for mi amore
+day-scribe-essence                  | 
+sci                                 | state of the art scientist
+dev-ee                              | IDE
+evolve                              | A evolution based discovery model inspired by Alphaevolve
+Heartbeat                           | Heartbeat
+gram                                | an pure nlp grammer engine written in rust
+TATPILTM                            | eh
+500_React_Interview_Questions       | 500 React Interview Questions
+Rhythm                              | 
+The_Window                          | windowwaaaaa
+Prologue_Please                     | My book store
+Lump                                | eh
+test                                | i test files here
+Planin                              | plan talk create
+infinite                            | discovery at its finest
+Interviewer                         | interview
+EWITW                               | Every Word Ever In The World
+AutoDiscovery                       | AI that invents and discovers stuff
+likho                               | text to handwriting
+Articles                            | All My Articles
+Sira                                | My Daughter
+Orbit                               | win
+Idaten_Jump                         | race race race
+spellcheck                          | spell
+is_shree_alive                      | bruh
+maze                                | sus
+Hivemind                            | something
+harp                                | something
+500_NodeJs_Interview_Questions      | 500_NodeJs_Interview_Questions
+Universal_Paperclips_Auto           | auto trader for universal paperclips
+BookVaccum                          | wooooshhhh!!!
+Last_Tea_Shop_Web                   | Trying to make a online version of one of my most fav solo journaling rpg games
+blush                               | 
+tetrisAI                            | Tetris go brr
+humanize-ai                         | 
+ConvergenceEngine                   | The trajectory of artificial intelligence over the past decade has been defined by a compelling yet challenging paradox
+Isabella                            | an AI interviewer
+Around_Us                           | An Fully Open Source Version Of "Flight Simulator" 
