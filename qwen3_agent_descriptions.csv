@@ -6,7 +6,7 @@ My-AI-ML-Neural-net-and-Tensorflow-Study,A Python-based TensorFlow study reposit
 FILL_ME_UP,A Python-based Streamlit application that generates Google Form responses for academic surveys using OpenAI's GPT-3.5-turbo.
 AI_to_attend_my_online_classes,A Python-based AI assistant that automates online class attendance using voice recognition and chatbot interactions.
 Chatterboii69,A Python-based chatbot framework that processes user input using text recognition through CSV data analysis.
-Eeman1113.github.io,Analysis failed.
+Eeman1113.github.io,My personal portfolio website. 
 Generating-Art-using-AI,A Python-based art generation tool that employs generative AI models to create digital artwork from the CC12M dataset.
 Lenia_Python_Implementation,A Python-based tutorial notebook that guides users through evolving from discrete to continuous cellular automata via interactive code modifications.
 PyFlashlight,A Python-based deep learning framework that implements GPU-accelerated automatic differentiation for educational implementation of tensor operations and neural network training.
@@ -22,7 +22,7 @@ telegram-dog-bot,A Python-based Telegram bot that sends random dog images in res
 AI-to-send-you-newspapers-from-a-randomly-made-up-world.,A Python-based headline generator that creates fictional news articles from a simulated world using AI-driven algorithms.
 rat_bonk,A Python-based game that implements rat-bonking mechanics through keyboard-controlled movement.
 HackX,A Python-based cheating tool that automates cheating in online exams.
-Ampusee,Analysis failed.
+Ampusee,A book reader that you can control with your finger using simple hand gesture recognition through a webcam interface made for buildspace.
 Morse-code,A Python-based Morse code translator that converts text to Morse signals and decodes Morse sequences back to text.
 playothello.online,A pure HTML/CSS/JavaScript-based Othello game that enables real-time gameplay against AI opponents across three difficulty levels.
 Examinee_AI,A Streamlit-based question-answering application that generates answers using OpenAI's GPT-3 API and displays results with visual formatting.
@@ -33,7 +33,7 @@ CHEATCHINGU,A Python-based OCR utility that extracts text from screenshots using
 AI,A Python-based AI implementation that provides very simple machine learning functionality using basic algorithms.
 Automated_Email_System-,A Python-based automated email system that schedules and sends messages via SMTP.
 The-AI-Based-Book-Generator,An AI-powered book generator that produces narrative content through machine learning algorithms.
-detection-of-COVID-19-WITH-KERAS,Analysis failed.
+detection-of-COVID-19-WITH-KERAS,A x-ray analysis tool that detects COVID-19 using Keras-based convolutional neural networks for image classification.
 bill-management,A Python-based bill management tool that prints and saves restaurant invoices in text format.
 seo,A Python-based SEO toolkit that generates meta tags and sitemaps for improved search engine visibility.
 OCR_for_SBI,A Python-based OCR system for SBI that processes scanned documents using OpenCV and Tesseract for automated data extraction.
@@ -68,7 +68,7 @@ Noter,A Python-based note-making application that generates comprehensive study 
 Humaneyes,A Python-based eye detection library that utilizes traditional computer vision techniques without AI algorithms.
 What-Should-I-make-Today,A Python-based meal recommendation tool that generates daily cooking suggestions using an Indian food dataset.
 Chetan-Bhagat-AI,A Python-based AI generator that creates Chetan Bhagat-style prose using natural language processing.
-Story,Analysis failed.
+Story, A extremly complicated multi agent system that generates stories through recursive agent interactions and dynamic tool calling to create complex narratives.
 rust_grammar,"A Rust-based grammar analysis library and REST API server that processes text for syntax errors, passive voice detection, and readability metrics through CLI and API endpoints."
 Artificial_Life,A Python-based Conway's Game of Life simulation that models cellular automaton evolution using Pygame graphics.
 NNFS,A Python-based neural network framework that executes sequential module operations through numbered script files.
@@ -81,14 +81,14 @@ Pyamagotchi,A Python-based virtual pet game that simulates Tamagotchi care using
 AI_to_generate_sentences_from_words,A Python-based AI-powered sentence generator that transforms keyword inputs into coherent natural language text.
 GODOT_Adventures,"A Godot-based game asset repository that provides customizable character models, scene scripts, and project configurations for interactive game development."
 AI_Girlfriend,A Machine Learning-based companion bot that simulates realistic human interactions using natural language processing.
-Gerne,Analysis failed.
+Gerne,Welcome to Gerne the interactive storytelling adventure where your imagination takes the lead! Get ready for a fantastical odyssey filled with whimsical scenarios and unexpected twists.
 random-,A Rust-based random number generator that produces cryptographically secure random values for cryptographic and simulation applications.
 Kagaz,A Groq-integrated LLM-based newspaper generator that creates plot-driven articles with AI-generated characters and locations.
 type,A JavaScript-based type system that validates data structures using ASCII character representations.
 Earth,A minimal static HTML website that serves Earth-themed content via index.html.
 Wensday,A personal AI project that demonstrates fundamental intelligence capabilities.
 Valid_Kun,A Python-based AI motivational companion that generates personalized motivational messages using OpenAI's language models.
-Homeworker,Analysis failed.
+Homeworker,A ai agent that does my homework for me.
 Highlight,"{name: highlight, description: A Next.js-based code diff visualizer that dynamically highlights text differences using Quill.js, technologies: [Next.js, Quill.js, React]}"
 Commitment_iShoes,A repository containing multiple README files for project documentation purposes.
 ant_man,A Python-based ant behavior simulation that models pheromone trail navigation and food-seeking dynamics using pygame.
@@ -111,13 +111,13 @@ seascolor,A Streamlit-based color analysis tool that classifies skin undertones 
 nativesee,A Next.js-based PDF reader that enables hand gesture navigation using TensorFlow.js hand pose models for page selection.
 Black-and-white-to-colour-photos,A Python-based image converter that transforms black-and-white photographs into color using neural networks.
 PrompterToolkit,A Python Streamlit application that processes Next.js project files to generate prompt-enhanced output files from user-selected JavaScript code.
-Dinorant,Analysis failed.
+Dinorant,A rl based chrome dino game bot that uses Q-learning to optimize gameplay strategies and achieve high scores.
 React-Text-Editor-Using-Quill.js,A React-based text editor that utilizes Quill.js for rich text editing functionality.
 The-Yolo-Bootcamp,A Jupyter Notebook implementation of YOLOv7 that executes GPU-accelerated object detection using PyTorch and pre-trained weights.
 Procedural_Generation_Python,"A Python-based procedural generation toolkit that creates 3D terrain, cave systems, and islands using Perlin noise and BFS algorithms."
 morphic-ai-answer-engine-generative-ui,A Next.js-based AI-powered search engine that integrates multiple generative AI providers with customizable UI capabilities using Vercel AI SDK RSC and Radix UI components.
 Resuwrite,A Python-based AI novel generation system that transforms resume data into structured creative stories using specialized LLM chains and Groq-powered language models.
-yapnotes,Analysis failed.
+yapnotes,Speech-to-text note-taking application that captures audio input and converts it into organized notes using Python libraries for audio processing and natural language understanding.
 Moon_Phase,A Streamlit-based birthday moon phase calculator that computes lunar phase names and illumination percentages for user-selected dates.
 UniversalComponents,"A JavaScript-based health tracking application that integrates modular components for diet, food database, and symptom monitoring."
 PythonRSB,"A Python-based AI writing assistant that analyzes text for redundancy, filler words, and readability using NLTK and Groq API integration."
@@ -127,7 +127,7 @@ Grammar_Engine,A Haskell-based grammar engine executable that processes natural 
 Generating-Animation-By-An-AI,A Python-based animation generator that leverages VQGAN and CLIP for synthesizing AI-driven video content from textual prompts.
 eeja,A responsive HTML/CSS/JavaScript portfolio site that dynamically displays a grid of looping video clips with interactive fullscreen toggling.
 WebGraphics,A lightweight HTML/SVG-based web graphics toolkit that provides interactive graphical representations through browser-rendered HTML and SVG files.
-infiwrite,Analysis failed.
+infiwrite,Imagine a writing space that doesn’t interrupt you. It doesn’t second-guess what you meant. Doesn’t autosuggest your soul. Doesn’t do spellcheck. Doesn’t get in your way. It’s just a blank void with soft noise like an old analog TV left humming in the back of your head. That’s Infiwrite.
 konflict,A JavaScript-based news digest application that aggregates and filters RSS feeds to curate India-Pakistan conflict-focused articles using keyword-based relevance checks.
 Pokemon_Adventures,A Tailwind-based web application that dynamically displays Pokémon data in a responsive grid with a search interface.
 TypeFaster,A Python-based typing automation tool that uses Selenium and PyAutoGUI to simulate keyboard input on Human Benchmark tests for speed measurement.
@@ -145,7 +145,7 @@ Wirerio,An AI-powered JavaScript-based web application that converts hand-drawn 
 Sume_Kun,A minimal GitHub repository named Sume_Kun that includes a README and license file.
 Commitment_iShoes_2,\boxed{A versioned documentation system for tracking commitments in shoe inventory management.}
 Eeman1113,A Streamlit-based portfolio website that showcases AI projects including YOLOv7 dog detection and ML-based career counseling.
-High_Life,Analysis failed.
+High_Life,PDF to sudy notes generator that processes PDF documents to extract key information and generate structured study notes using Python libraries such as PyPDF2 and NLTK for text analysis.
 AsciiCam,A Streamlit-based webcam-to-ASCII converter that dynamically transforms live camera input into monochrome ASCII art using OpenCV.
 Sell_Me_A_Thing_AI,An AI-driven sales pitch generator that creates persuasive product descriptions for e-commerce platforms.
 eemanGPT,A Streamlit-based chat interface that integrates the Groq API to provide a conversational AI experience using the llama3-8b model.
@@ -168,7 +168,7 @@ UC,A Vite-based TypeScript React application leveraging Shadcn/ui components to 
 day-scribe-essence,A React/TypeScript diary application that integrates Supabase authentication and supports multimedia entries using Shadcn/ui components.
 sci,A CrewAI and LangGraph-integrated multi-agent research platform that automatically synthesizes comprehensive academic reports through recursive web exploration and collaborative agent workflows.
 dev-ee,A Streamlit-based Python code editor that executes user-submitted code and displays runtime output via a console interface.
-Agentic_Description,Analysis failed.
+Agentic_Description,A multi agent system with proper tool calling to generate descriptions for all my repos in a csv file.
 evolve,An evolution-based discovery model inspired by Alphaevolve that utilizes adaptive genetic algorithms for optimized exploration.
 Heartbeat,A Python-based image processing utility that converts and optimizes photo gallery assets to WebP format for efficient web delivery.
 gram,"A Rust-based grammar checker that detects weasel words, passive voice, and duplicate words using regex to improve academic writing quality."
@@ -203,13 +203,13 @@ Last_Tea_Shop_Web,A Tailwind CSS-based static website that provides interactive 
 blush,A Streamlit-based skin tone analyzer that recommends personalized blush colors based on facial analysis using OpenCV and clustering algorithms.
 tetrisAI,A JavaScript-based Tetris game that uses AI to dynamically optimize piece placement strategies for enhanced gameplay.
 humanize-ai,A React-based text humanization platform that generates natural-sounding sentence alternatives with Supabase authentication and Stripe payment integration.
-ConvergenceEngine,Analysis failed.
+ConvergenceEngine,The trajectory of artificial intelligence over the past decade has been defined by a compelling yet challenging paradox (research work)
 Isabella,A Python-based AI interviewer that conducts interactive interviews for job candidates using natural language processing.
 Around_Us,A Cesium-powered web-based flight simulator that enables real-time 3D globe navigation with photorealistic terrain and building models for immersive flight exploration.investment-research-agent
-aegis,Analysis failed.
+ADAS_Mobile,A Python-based ADAS application that provides real-time driving assistance using YOLOv8 object detection and lane tracking.
+aegis,AEGIS / イージス — Enterprise Security & Quarterly Regression Testing Platform. Self-hosted Streamlit dashboard with live AWS integration.
 Parallel-Agent-Reinforcement-Learning-PARL-,A PARL-based agent swarm system that dynamically creates specialized sub-agents to generate complete novels.
-autofx,Analysis failed.
+autofx,A extremly mathmetical python based forex trading bot that uses technical indicators and machine learning to make informed trading decisions in the foreign exchange market.
 Bday,A Vite-powered React-based birthday website that utilizes GSAP animations and canvas-confetti for interactive celebration effects.
 valentine,A React-based Valentine's Day website that animates interactive heart formations using GSAP and Framer Motion.
 investment-research-agent,"A Python-based investment research agent that orchestrates real-time market data, financial news, and SEC filings via Amazon Bedrock to deliver comprehensive analysis in under 5 minutes."
-
