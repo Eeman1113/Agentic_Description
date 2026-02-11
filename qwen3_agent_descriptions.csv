@@ -205,4 +205,4 @@ tetrisAI,A JavaScript-based Tetris game that uses AI to dynamically optimize pie
 humanize-ai,A React-based text humanization platform that generates natural-sounding sentence alternatives with Supabase authentication and Stripe payment integration.
 ConvergenceEngine,Analysis failed.
 Isabella,A Python-based AI interviewer that conducts interactive interviews for job candidates using natural language processing.
-Around_Us,A Cesium-powered web-based flight simulator that enables real-time 3D globe navigation with photorealistic terrain and building models for immersive flight exploration.
+Around_Us,A Cesium-powered web-based flight simulator that enables real-time 3D globe navigation with photorealistic terrain and building models for immersive flight exploration.investment-research-agent,"A Python-based investment research agent that orchestrates SEC filings, market data, and news via Amazon Bedrock and FAISS vector search in a serverless AWS Lambda deployment."
