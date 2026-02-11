@@ -4,11 +4,12 @@ import csv
 import base64
 import ollama
 import time
+import os
 
 # --- Configuration ---
 OLLAMA_MODEL = "qwen3-vl:latest" 
 OUTPUT_FILE = "qwen3_agent_descriptions.csv"
-REPO_LIMIT = 200  # Increased to catch all your projects
+REPO_LIMIT = 300
 
 # --- TOOL CLASS ---
 class RepoInspector:
@@ -17,7 +18,7 @@ class RepoInspector:
 
     def list_files(self) -> str:
         """
-        Lists files in the repository. Call this FIRST to see the project structure.
+        Lists files in the repository. 
         """
         ignore_paths = ['node_modules', '.git', 'assets', 'dist', 'build', 'vendor', 
                         'public', 'static', 'yarn.lock', 'package-lock.json', '.env', 
@@ -79,28 +80,32 @@ def run_agentic_analysis(repo_name, repo_full_name):
     
     inspector = RepoInspector(repo_full_name)
     available_tools = [inspector.list_files, inspector.read_file]
-    
-    # Map for manual execution
     tool_map = {'list_files': inspector.list_files, 'read_file': inspector.read_file}
 
-    # Strict System Prompt
+    # 1. PRE-FETCH FILE LIST
+    print("   📂 Pre-fetching file list...")
+    file_structure = inspector.list_files()
+
+    # 2. UPDATED SYSTEM PROMPT
     system_prompt = """
     You are an automated code analysis agent.
     Your goal is to inspect a GitHub repository and write a ONE-SENTENCE technical description.
     
     RULES:
-    1. START by calling `list_files` to see what is inside.
-    2. READ key files (README.md, Cargo.toml, package.json) using `read_file`.
-    3. DO NOT output JSON plans in your text response. USE THE PROVIDED TOOLS DIRECTLY.
-    4. If you have enough info, output the description.
+    1. The file list is provided in the first message. Analyze it to understand the structure.
+    2. IMMEDIATELY call `read_file` on key files (e.g., README.md, Cargo.toml, package.json, main.py).
+    3. DO NOT ask to list files again.
+    4. DO NOT output JSON plans. USE THE TOOLS DIRECTLY.
+    5. If you have enough info, output the description.
     
     Format: "[Adjective/Tech] [Noun] that [Verb] [Outcome]."
     Example: "A Rust-based grammar engine that optimizes syntax checking using n-gram analysis."
     """
 
+    # 3. INJECT INTO INITIAL MESSAGE
     messages = [
         {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': f"Analyze repository: {repo_name}"}
+        {'role': 'user', 'content': f"Analyze repository: {repo_name}\n\nHere is the file list:\n{file_structure}"}
     ]
     
     final_description = "Analysis failed."
@@ -112,7 +117,7 @@ def run_agentic_analysis(repo_name, repo_full_name):
             messages=messages,
             tools=available_tools,
             stream=True,
-            think=True, 
+            # think=True, 
         )
 
         thinking_buffer = ""
@@ -123,15 +128,13 @@ def run_agentic_analysis(repo_name, repo_full_name):
         
         # --- STREAM PROCESSING ---
         for chunk in response:
-            # Handle Thinking
-            if chunk.message.thinking:
+            if hasattr(chunk.message, 'thinking') and chunk.message.thinking:
                 if not in_thinking:
                     print("\n🧠 THINKING:", end=" ", flush=True)
                     in_thinking = True
                 print(chunk.message.thinking, end="", flush=True)
                 thinking_buffer += chunk.message.thinking
 
-            # Handle Content
             if chunk.message.content:
                 if in_thinking:
                     print("\n\n💬 RESPONSE:", end=" ", flush=True)
@@ -139,13 +142,11 @@ def run_agentic_analysis(repo_name, repo_full_name):
                 print(chunk.message.content, end="", flush=True)
                 content_buffer += chunk.message.content
 
-            # Handle Tool Calls
             if chunk.message.tool_calls:
                 tool_calls_buffer.extend(chunk.message.tool_calls)
         
         print("\n")
 
-        # Prepare message history
         assistant_msg = {'role': 'assistant', 'content': content_buffer}
         if thinking_buffer: assistant_msg['thinking'] = thinking_buffer
         if tool_calls_buffer: assistant_msg['tool_calls'] = tool_calls_buffer
@@ -153,8 +154,6 @@ def run_agentic_analysis(repo_name, repo_full_name):
         messages.append(assistant_msg)
 
         # --- LOGIC CONTROL ---
-        
-        # 1. If tools were called, execute them
         if tool_calls_buffer:
             for tool in tool_calls_buffer:
                 fname = tool.function.name
@@ -166,20 +165,17 @@ def run_agentic_analysis(repo_name, repo_full_name):
                         result = tool_map[fname](**fargs)
                     except Exception as e:
                         result = f"Error executing tool: {e}"
-                        
+                    
                     messages.append({'role': 'tool', 'tool_name': fname, 'content': str(result)})
                 else:
                     messages.append({'role': 'tool', 'tool_name': fname, 'content': "Error: Function not found."})
-            continue # Loop back to let model read the result
+            continue 
 
-        # 2. Heuristic Check: Did the model hallucinate a plan?
-        # If content mentions "action": "read_file" but no tool call happened, we nudge it.
         if "action" in content_buffer and "read_file" in content_buffer and not tool_calls_buffer:
             print("⚠️  Model hallucinated a JSON plan. Nudging to use real tools...")
-            messages.append({'role': 'user', 'content': "You wrote a plan but didn't trigger the tool. Please properly invoke the 'read_file' or 'list_files' tool function now."})
+            messages.append({'role': 'user', 'content': "You wrote a plan but didn't trigger the tool. Please properly invoke the 'read_file' tool function now."})
             continue
 
-        # 3. If no tools and no hallucination, we assume it's the final answer
         if content_buffer.strip():
             final_description = content_buffer
             break
@@ -190,7 +186,6 @@ def run_agentic_analysis(repo_name, repo_full_name):
 
 def get_repos():
     print("🔍 Fetching ALL repositories...")
-    # Removed date filter to get all repos
     cmd = ['gh', 'search', 'repos', '--owner=@me', '--limit', str(REPO_LIMIT), '--json', 'name,fullName']
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
@@ -198,38 +193,59 @@ def get_repos():
         return []
     return json.loads(result.stdout)
 
+def get_existing_progress(filepath):
+    processed = set()
+    if not os.path.exists(filepath):
+        return processed
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            next(reader, None)
+            for row in reader:
+                if row:
+                    processed.add(row[0])
+    except Exception as e:
+        print(f"⚠️ Warning: Could not read existing file: {e}")
+    return processed
+
 def main():
     repos = get_repos()
-    print(f"📦 Found {len(repos)} repositories.")
+    print(f"📦 Found {len(repos)} repositories total.")
 
     if not repos:
         return
 
-    # Use 'a' mode (append) in case script crashes, so we don't lose progress
-    # But for a clean start, we use 'w'. 
-    with open(OUTPUT_FILE, mode='w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        writer.writerow(['Repo Name', 'Description'])
+    processed_repos = get_existing_progress(OUTPUT_FILE)
+    print(f"⏭️  Found {len(processed_repos)} repositories already processed.")
+
+    if not os.path.exists(OUTPUT_FILE):
+        with open(OUTPUT_FILE, mode='w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Repo Name', 'Description'])
+            print(f"📄 Created new file: {OUTPUT_FILE}")
 
     for i, repo in enumerate(repos):
-        print(f"\n[{i+1}/{len(repos)}] Processing {repo['name']}...")
+        repo_name = repo['name']
+        
+        if repo_name in processed_repos:
+            print(f"[{i+1}/{len(repos)}] ⏩ Skipping {repo_name} (Already in CSV)")
+            continue
+
+        print(f"\n[{i+1}/{len(repos)}] Processing {repo_name}...")
         
         try:
-            desc = run_agentic_analysis(repo['name'], repo['fullName'])
-            
-            # Formatting cleanup
+            desc = run_agentic_analysis(repo_name, repo['fullName'])
             clean_desc = desc.replace('\n', ' ').replace('"', '').strip()
             
-            # Save strictly to CSV immediately
             with open(OUTPUT_FILE, mode='a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow([repo['name'], clean_desc])
+                writer.writerow([repo_name, clean_desc])
                 
         except Exception as e:
-            print(f"❌ Critical Error on {repo['name']}: {e}")
+            print(f"❌ Critical Error on {repo_name}: {e}")
             with open(OUTPUT_FILE, mode='a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow([repo['name'], "Error during processing"])
+                writer.writerow([repo_name, "Error during processing"])
 
     print(f"\n✅ Completed. Check {OUTPUT_FILE}")
 
