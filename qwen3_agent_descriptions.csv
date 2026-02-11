@@ -206,3 +206,10 @@ humanize-ai,A React-based text humanization platform that generates natural-soun
 ConvergenceEngine,Analysis failed.
 Isabella,A Python-based AI interviewer that conducts interactive interviews for job candidates using natural language processing.
 Around_Us,A Cesium-powered web-based flight simulator that enables real-time 3D globe navigation with photorealistic terrain and building models for immersive flight exploration.investment-research-agent,"A Python-based investment research agent that orchestrates SEC filings, market data, and news via Amazon Bedrock and FAISS vector search in a serverless AWS Lambda deployment."
+ADAS_Mobile,A Python-based ADAS application that provides real-time driving assistance using YOLOv8 object detection and lane tracking.
+aegis,Analysis failed.
+Parallel-Agent-Reinforcement-Learning-PARL-,A PARL-based agent swarm system that dynamically creates specialized sub-agents to generate complete novels.
+autofx,Analysis failed.
+Bday,A Vite-powered React-based birthday website that utilizes GSAP animations and canvas-confetti for interactive celebration effects.
+valentine,A React-based Valentine's Day website that animates interactive heart formations using GSAP and Framer Motion.
+investment-research-agent,"A Python-based investment research agent that orchestrates real-time market data, financial news, and SEC filings via Amazon Bedrock to deliver comprehensive analysis in under 5 minutes."
